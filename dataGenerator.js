@@ -10,7 +10,7 @@ const generateFile = (fileName, callback) => {
     let data = generateData();
     let dataNumbersType = Number.isInteger(data[0]) === true ? 'integers' : 'floats';
     let name = `data/${fileName}` ?? `data/${data.length}x${dataNumbersType}.txt`;
-    fs.writeFile(name, 
+    fs.writeFileSync(name, 
         data.toString(), 
         (err) => {
             if (err) {
