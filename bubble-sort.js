@@ -12,4 +12,23 @@ const bubbleSort = (arr) => {
     return arr;
 }
 
-export { bubbleSort };
+const bubbleSort2 = (arr) => {
+    do {
+        let swapped = false;
+        index = 1;
+        for (let i = 0; i < arr.length - index; i++) {
+            if (arr[i] > arr[i + 1]) {
+                let tmp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = tmp; 
+                swapped = true;
+            }
+        }
+        
+        index++;
+    } while (swapped)
+
+    return arr;
+}
+
+export { bubbleSort, bubbleSort2 };

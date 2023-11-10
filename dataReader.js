@@ -14,11 +14,12 @@ const checkDirectory = () => {
 const checkFile = () => {
     const dataFile = process.argv[2] || '1000xintegers.txt';
     if (!fs.existsSync(dataFile)) generateFile(dataFile);
+    return dataFile;
 }
 
 const getData = () => {
     checkDirectory();
-    checkFile();
+    let dataFile = checkFile();
     
     return readFile(dataFile);
 }
