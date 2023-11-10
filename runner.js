@@ -1,7 +1,31 @@
+import { performance } from 'perf_hooks';
 import { getData } from './dataReader.js';
 import { bubbleSort, bubbleSort2 } from './bubble-sort.js';
 
 const data = getData();
-console.log('Data: ', data);
-console.log('Sorted data: ', bubbleSort(data));
-console.log('Data: ', data);
+console.log(
+    "\x1b[33m%s\x1b[0m", 
+    `Bubblesort to be performed on ${data.length} numbers.
+The sorting will be performed 100 times and the average time will be calculated.`
+);
+
+const runFunction = (data, sortingFunction, repetition) => {
+    const start = performance.now();
+    for (let i = 0; i < repetition; i++) {
+        sortingFunction(data.slice());
+    }
+    const end = performance.now();
+
+    return end - start;
+}
+
+let time = runFunction(data, bubbleSort, 100);
+let time2 = runFunction(data, bubbleSort2, 100);
+
+console.log("\x1b[32m%s", `BubbleSort:
+Total ${time}ms
+Average ${time / 100}ms`);
+console.log("----");
+console.log("%s\x1b[0m", `BubbleSort2: 
+Total ${time2}ms
+Average ${time2 / 100}ms`);

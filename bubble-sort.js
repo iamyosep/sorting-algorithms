@@ -13,9 +13,10 @@ const bubbleSort = (arr) => {
 }
 
 const bubbleSort2 = (arr) => {
+    let index = 1;
+    let swapped = false;
     do {
-        let swapped = false;
-        index = 1;
+        swapped = false;
         for (let i = 0; i < arr.length - index; i++) {
             if (arr[i] > arr[i + 1]) {
                 let tmp = arr[i];
