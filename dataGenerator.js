@@ -1,3 +1,6 @@
+import * as fs from 'fs';
+
+
 const AMOUNT_OF_DATA = 1000;
 let data;
 
