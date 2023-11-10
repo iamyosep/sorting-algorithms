@@ -6,7 +6,7 @@ const generateInteger = (min = 1, max = 100) => Math.floor(Math.random() * (max 
 const generateFloat = (min = 1, max = 100) => Math.random() * (max - min) + min;
 
 const generateData = (amout = AMOUNT_OF_DATA, numberGenerator = generateInteger) => Array.from({ length: AMOUNT_OF_DATA }, () => numberGenerator());
-const generateFile = (fileName, callback) => {
+const generateFile = (fileName) => {
     let data = generateData();
     let dataNumbersType = Number.isInteger(data[0]) === true ? 'integers' : 'floats';
     let name = `data/${fileName}` ?? `data/${data.length}x${dataNumbersType}.txt`;
@@ -18,8 +18,7 @@ const generateFile = (fileName, callback) => {
                 return;
             }
 
-            console.log("File created");
-            callback(null);
+            console.log("File created successfully");
     });
 }
 
