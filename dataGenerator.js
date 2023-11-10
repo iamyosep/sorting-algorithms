@@ -6,15 +6,21 @@ const generateInteger = (min = 1, max = 100) => Math.floor(Math.random() * (max 
 const generateFloat = (min = 1, max = 100) => Math.random() * (max - min) + min;
 
 const generateData = (amout = AMOUNT_OF_DATA, numberGenerator = generateInteger) => Array.from({ length: AMOUNT_OF_DATA }, () => numberGenerator());
-const generateFile = () => {
+const generateFile = (fileName, callback) => {
     let data = generateData();
     let dataNumbersType = Number.isInteger(data[0]) === true ? 'integers' : 'floats';
-    fs.writeFile(`data/${data.length}x${dataNumbersType}.txt`, 
+    let name = `data/${fileName}` ?? `data/${data.length}x${dataNumbersType}.txt`;
+    fs.writeFile(name, 
         data.toString(), 
         (err) => {
-            if (err) throw err;
+            if (err) {
+                console.log("Error creating file: ", err);
+                return;
+            }
+
             console.log("File created");
+            callback(null);
     });
 }
 
-generateFile();
+export { generateData, generateFile, generateInteger, generateFloat };
