@@ -8,9 +8,12 @@ const generateFloat = (min = 1, max = 100) => Math.random() * (max - min) + min;
 const generateData = (amout = AMOUNT_OF_DATA, numberGenerator = generateInteger) => Array.from({ length: AMOUNT_OF_DATA }, () => numberGenerator());
 const generateFile = () => {
     let data = generateData();
-    fs.writeFile(`${data.length}x${Number.isInteger(data[0])}.txt`, data.toString(), (err) => {
-        if (err) throw err;
-        console.log("File created");
+    let dataNumbersType = Number.isInteger(data[0]) === true ? 'integers' : 'floats';
+    fs.writeFile(`data/${data.length}x${dataNumbersType}.txt`, 
+        data.toString(), 
+        (err) => {
+            if (err) throw err;
+            console.log("File created");
     });
 }
 
