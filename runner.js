@@ -28,8 +28,10 @@ console.log("\x1b[31m%s\x1b[0m", "Bubblesort:");
 console.log(`Total: ${time}ms
 Avg: ${time / 100}ms`);
 
-console.log("")
+console.log("");
 
 console.log("\x1b[31m%s\x1b[0m", "Bubblesort2:");
 console.log(`Total: ${time2}ms
 Avg: ${time2 / 100}ms`);
+
+console.log("");
