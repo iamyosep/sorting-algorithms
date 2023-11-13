@@ -1,4 +1,4 @@
-const insertionSort = (arr) => {
+const insertionSort = arr => {
     for (let i = 0; i < arr.length; i++) {
         let temp = arr[i];
         let j = i - 1;

@@ -1,4 +1,4 @@
-const bubbleSort = (arr) => {
+const bubbleSort = arr => {
     for (let i = 1; i < arr.length; i++) {
         for (let j = 0; j < (arr.length - i); j++) {
             if (arr[j] > arr[j + 1]) {
@@ -12,7 +12,7 @@ const bubbleSort = (arr) => {
     return arr;
 }
 
-const bubbleSort2 = (arr) => {
+const bubbleSort2 = arr => {
     let index = 1;
     let swapped = false;
     do {
