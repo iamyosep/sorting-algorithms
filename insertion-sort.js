@@ -7,6 +7,8 @@ const insertionSort = (arr) => {
             j--;
         }
     }
+
+    return arr;
 }
 
 export { insertionSort };
