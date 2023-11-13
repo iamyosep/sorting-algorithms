@@ -19,7 +19,7 @@ This repository contains the implementation of the following sorting algorithms:
     - Clone this repository to your local machine using `git clone`
 3. Run the code
     - Open a terminal in the root directory of this repository
-    - Run the `runner.js` file using `node runner.js <file> <sort> <repitions>`
+    - Run the `runner.js` file using `node runner.js <file> <sort> <repetition>`
 
 
 ## How it works
