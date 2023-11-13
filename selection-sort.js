@@ -13,6 +13,8 @@ const selectionSort = (arr) => {
             arr[minimumIndex] = tmp;
         }
     }
+
+    return arr;
 }
 
 export { selectionSort };
