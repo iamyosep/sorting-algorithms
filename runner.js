@@ -1,8 +1,10 @@
 import { performance } from 'perf_hooks';
-import { getData } from './dataReader.js';
-import { bubbleSort, bubbleSort2 } from './bubble-sort.js';
-import { insertionSort } from './insertion-sort.js';
-import { selectionSort } from './selection-sort.js';
+import { getData } from './Utilities/dataReader.js';
+
+/* Algorithms */
+import { bubbleSort, bubbleSort2 } from './Algorithms/bubble-sort.js';
+import { insertionSort } from './Algorithms/insertion-sort.js';
+import { selectionSort } from './Algorithms/selection-sort.js';
 
 const REQUIRED_ARGS = 5;
 const ARGS = process.argv;
