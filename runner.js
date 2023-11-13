@@ -2,6 +2,7 @@ import { performance } from 'perf_hooks';
 import { getData } from './dataReader.js';
 import { bubbleSort, bubbleSort2 } from './bubble-sort.js';
 import { insertionSort } from './insertion-sort.js';
+import { selectionSort } from './selection-sort.js';
 
 const REQUIRED_ARGS = 5;
 const ARGS = process.argv;
@@ -24,6 +25,10 @@ const sortingFunctions = {
     insertion: {
         name: 'Insertion Sort',
         function: insertionSort,
+    },
+    selection: {
+        name: 'Selection Sort',
+        function: selectionSort,
     },
 }
 
